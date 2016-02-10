@@ -1,0 +1,28 @@
+{
+    "name" : "mithril-starterkit",
+    "version" : "1.0",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "vendor",
+        "test",
+        "tests"
+    ],
+    "dependencies" : {
+        "headjs": ">= 1.0.3",
+        "media-match": ">= 0.1.0",
+        "responsejs": ">= 0.9.0"
+    },
+    "overrides": {
+        "media-match": {
+            "main": [
+              "media.match.min.js"
+            ]
+        },
+        "responsejs": {
+            "main": [
+              "response.min.js"
+            ]
+        }
+    }
+}
