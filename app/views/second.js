@@ -5,7 +5,8 @@ var store   = require('../isomorphic/store');
 var m       = require('mithril');
 
 // DB
-var db      = require('./../models');
+//var db      = require('./../models');
+
 
 function controller(req, done) {
   var scope = {};
@@ -14,11 +15,17 @@ function controller(req, done) {
     done && done(null, scope);
   });
 
+  store.load('i18n', 10).then( function (i18n) {
+    scope.i18n = i18n;
+    done && done(null, scope);
+  });
+
   //console.log(req.db);
   //console.log(req.db ? 'connected' : 'not connected');
-  db.i18n.findById(10).then( function (i18n) {
+
+  /*db.i18n.findById(10).then( function (i18n) {
     scope.i18n = i18n.key;
-  });
+  });*/
 
   /*router.get('/', function(req, res) {
     models.I18n.findAll().then( function (i18ns) {
@@ -39,7 +46,7 @@ function view(scope) {
       config: m.route
     }, 'back to home page'),
     m('p', scope.myDog && ('My dogs name is : ' + scope.myDog.name) || ''),
-    m('p', scope.i18n && ('My I18n key is :  ' + scope.i18n.key) || '')
+    m('p', scope.i18n && ('My I18n key is : ' + scope.i18n.key) || '')
   ];
 }
 

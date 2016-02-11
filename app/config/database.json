@@ -3,30 +3,16 @@
 		"database": "homestead",
 		"username": "homestead",
 		"password": "secret",
+		"port": "33060",
 		"chained": "mysql://homestead:secret@localhost:33060/homestead",
-		"config": {
-			"host": "localhost",
-			"dialect": "mysql",
-			"pool": {
-				"max": 5,
-				"min": 0,
-				"idle": 10000
-			}
-		}
+		"dialect": "mysql"
 	},
 	"development": {
 		"database": "homestead",
 		"username": "homestead",
 		"password": "secret",
+		"port": "33060",
 		"chained": "mysql://homestead:secret@localhost:33060/homestead",
-		"config": {
-			"host": "localhost",
-			"dialect": "mysql",
-			"pool": {
-				"max": 5,
-				"min": 0,
-				"idle": 10000
-			}
-		}
+		"dialect": "mysql"
 	}
 }

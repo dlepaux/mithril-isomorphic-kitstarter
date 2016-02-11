@@ -18,6 +18,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING
     }
   }, {
+    tableName: 'i18n',
     timestamps: false,
     freezeTableName: true // Model tableName will be the same as the model name
   });

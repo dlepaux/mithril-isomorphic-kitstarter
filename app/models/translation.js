@@ -22,6 +22,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.TEXT
     }
   }, {
+    tableName: 'translations',
     timestamps: false,
     freezeTableName: true // Model tableName will be the same as the model name
   });

@@ -10,6 +10,7 @@ module.exports = function(sequelize, DataTypes) {
       autoIncrement: false
     }
   }, {
+    tableName: 'locales',
     timestamps: false,
     freezeTableName: true // Model tableName will be the same as the model name
   });

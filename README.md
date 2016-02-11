@@ -2,11 +2,21 @@
 
 Build thanks to [Brunch][]
 
+- [Installation](#installation)
 - [Features](#features)
 - [TODO](#todo)
 - [Thanks](#thanks)
 - [Licence](#licence)
 
+
+## <a name="installation"></a> Installation
+
+1. `git clone https://github.com/dlepaux/mithril-isomorphic-starterkit mithril-isomorphic-starterkit`
+2. `cd mithril-isomorphic-starterkit`
+3. `npm install`
+4. `node server`
+
+If you want to run it in production mode (JS minification) just run `NODE_ENV=production node server`
 
 ## <a name="features"></a> Features
 
