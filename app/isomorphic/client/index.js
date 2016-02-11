@@ -4,9 +4,9 @@ if (global.document) {
   require('es6-promise').polyfill();
 }
 var domready = require('domready');
-var m = require('mithril');
+var m 		 = require('mithril');
 
-var routes = require('./routes');
+var routes = require('./../../routes');
 
 m.route.mode = 'pathname';
 

@@ -1,7 +1,7 @@
 'use strict';
 
 var express = require('express');
-var routes  = require('../client/routes');
+var routes  = require('./../../routes');
 var each    = require('lodash').each;
 var render  = require('mithril-node-render');
 
@@ -14,7 +14,7 @@ function base(content) {
     '<head>',
     '<title>isomorphic mithril application</title>',
     '<meta charset="utf-8">',
-    '<script src="/js/index.js"></script>',
+    '<script src="/index.js"></script>',
     '</head>',
     '<body>',
     content,
@@ -31,10 +31,10 @@ each(routes, function(module, route) {
       scope && scope.onunload && scope.onunload();
     }
     if (module.controller.length < 2) { //sync, response imedeatly
-      return send(module.controller(req.params));
+      return send(module.controller(req));
     }
     // async, call with callback
-    return module.controller(req.params, function(err, scope) {
+    return module.controller(req, function(err, scope) {
       if (err) {
         return next(err);
       }

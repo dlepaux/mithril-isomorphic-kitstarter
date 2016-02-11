@@ -1,7 +1,7 @@
 'use strict';
 
-var home = require('./pages/home');
-var second = require('./pages/second');
+var home = require('./views/home');
+var second = require('./views/second');
 
 module.exports = {
   '/': home,
