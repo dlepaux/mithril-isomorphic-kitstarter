@@ -21,7 +21,7 @@ If you want to run it in production mode (JS minification) just run `NODE_ENV=pr
 ## <a name="features"></a> Features
 
 - [Foundation][]  v6.1.2
-- [Mihtril][]     v0.2.2-rc.1
+- [Mithril][]     v0.2.2-rc.1
 
 
 ## <a name="todo"></a> TODO
