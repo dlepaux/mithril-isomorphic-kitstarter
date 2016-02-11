@@ -10,9 +10,10 @@ var m       = require('mithril');
 
 function controller(req, done) {
   var scope = {};
+
   store.load('dog', 123).then( function (dog) {
     scope.myDog = dog;
-    done && done(null, scope);
+    //done && done(null, scope);
   });
 
   store.load('i18n', 10).then( function (i18n) {
