@@ -30,7 +30,10 @@ If you want to run it in production mode (JS minification) just run `NODE_ENV=pr
 - Testing dynamic routes
 - Testing I18n API
 - Unit Testing (Mocha)
-
+- depends on what you want to achieve
+- creating a small version of your app that just contains the code which is needed to render this very page e. G. is a pretty good optimization
+- and load the rest async when the app is running
+- Maybe remove the need for ajax for the first page-load altogether might be another
 
 ## <a name="thanks"></a> Thanks
 

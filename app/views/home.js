@@ -2,7 +2,7 @@
 
 var m = require('mithril');
 
-function controller() {
+function controller(params) {
 }
 
 function view() {
