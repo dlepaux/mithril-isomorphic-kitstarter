@@ -4,6 +4,9 @@ var m       = require('mithril');
 var store   = require('../isomorphic/store');
 var m       = require('mithril');
 
+// DB
+var db      = require('./../models');
+
 function controller(req, done) {
   var scope = {};
   store.load('dog', 123).then( function (dog) {
@@ -13,11 +16,9 @@ function controller(req, done) {
 
   //console.log(req.db);
   //console.log(req.db ? 'connected' : 'not connected');
-
-  req.db.i18n.findById(10).then( function (i18n) {
+  db.i18n.findById(10).then( function (i18n) {
     scope.i18n = i18n.key;
   });
-  console.log(scope);
 
   /*router.get('/', function(req, res) {
     models.I18n.findAll().then( function (i18ns) {

@@ -9,17 +9,8 @@ var path   	 	= require('path');
 var compression = require('compression');
 var browserify  = require('browserify-middleware');
 
-// DB
-var db  		= require('./app/models');
-
 // Init Server
 var app = express();
-
-// Make Database accessible
-app.use(function(req,res,next){
-    req.db = db;
-    next();
-});
 
 // Set parameters
 app.use(bodyParser.urlencoded({
