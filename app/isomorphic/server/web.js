@@ -10,7 +10,6 @@ var routes  = require('./../../routes');
 
 // Init Express server
 var app = express();
-var isFirstLoad = true;
 
 function base(content) {
   return [
@@ -28,21 +27,25 @@ function base(content) {
   ].join('');
 }
 
-// Declare all routes as GET route
+// Declare all GET routes
 each(routes, function(module, route) {
   app.get(route, function(req, res, next) {
+    // Server Side
+    // Set HTTP header
     res.type('html');
-    function send(scope) {
+
+    // Envoi la réponse
+    var send = function (scope) {
       res.end(base(render(module.view(scope))));
       scope && scope.onunload && scope.onunload();
     }
-    if (module.controller.length < 2 || isFirstLoad) { //sync, response imedeatly
-      console.log('i do that');
-      isFirstLoad = false;
+
+    // Si le controller de la vue est vide, on genere la vue et on termine le process de réponse serveur
+    if (module.controller.length < 2) {
       return send(module.controller(req.params));
     }
-    console.log('not that');
-    // async, call with callback
+
+    // On exécute le controller de la vue, et on envoi un callback ( done() dans le controller)
     return module.controller(req.params, function(err, scope) {
       if (err) {
         return next(err);
@@ -51,5 +54,6 @@ each(routes, function(module, route) {
     });
   });
 });
+
 
 module.exports = app;

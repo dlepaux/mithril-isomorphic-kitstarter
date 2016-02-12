@@ -3,6 +3,9 @@
 var m = require('mithril');
 
 function controller(params) {
+  if ( ! params) {
+    global.isFirstLoad = false;
+  }
 }
 
 function view() {
