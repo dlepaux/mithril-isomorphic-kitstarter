@@ -15,5 +15,6 @@ var routes = require('./../../routes');
 m.route.mode = 'pathname';
 // Define routes when DOM Ready
 domready(function() {
+  global.htmlLoaded = document.body.innerHTML;
   m.route(document.body , '/', routes);
 });
