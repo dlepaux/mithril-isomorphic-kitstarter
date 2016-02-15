@@ -11,7 +11,7 @@ var browserify  = require('browserify-middleware');
 
 // Init Server
 var app = express();
-global.isFirstLoad = true;
+global.isFirstLoad = false;
 
 // Set parameters
 app.use(bodyParser.urlencoded({
