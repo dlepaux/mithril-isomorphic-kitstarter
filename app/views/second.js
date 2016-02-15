@@ -21,12 +21,7 @@ function controller(params, done) {
   }
 
   // Côté client, on ne va pas exécuter ce controlleur avec des paramètres, donc si il n'existe pas on est côté client
-  if ( ! params && ! done && global.isFirstLoad) {
-      done && done(null, scope);
-      global.isFirstLoad = false;
-      //console.log(global.htmlLoaded);
-      //
-  } else {
+  if ( ! (! params && ! done && global.isFirstLoad)) {
     loadData();
   }
 
@@ -35,10 +30,15 @@ function controller(params, done) {
 
 // View
 function view(scope) {
-  console.log();
   if (global.isFirstLoad) {
     global.isFirstLoad = false;
-    return mTrustLink.convert(global.htmlLoaded)
+    try {
+      console.log('mTrustLink.convert');
+      return mTrustLink.convert(global.htmlLoaded);
+    } catch(e) {
+      console.log(e);
+      return m.trust(global.htmlLoaded);
+    }
   } else {
     return [
       m.trust('<!-- Server side rendering \\o/ -->'),
