@@ -3,7 +3,7 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-var store = require('../isomorphic/store');
+var store = require('./store');
 
 app.use(bodyParser.json());
 

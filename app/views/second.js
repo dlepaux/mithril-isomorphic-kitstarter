@@ -2,7 +2,7 @@
 
 // Requires
 var m           = require('mithril');
-var store       = require('../isomorphic/store');
+var store       = require('./../api/store');
 
 // Controller
 function controller(params, done) {

@@ -7,9 +7,6 @@ if (global.document) {
 var domready = require('domready');
 var m 		 = require('mithril');
 
-// Init global
-require('./start/global');
-
 // Get routes
 var routes = require('./routes');
 // Define route style, (pathname|hash|search)

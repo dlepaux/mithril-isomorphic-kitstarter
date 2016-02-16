@@ -1,12 +1,9 @@
 'use strict';
 
-// Init Global
-require('./app/start/global');
-
 // Requires
 var express 	= require('express');
 var bodyParser 	= require('body-parser');
-var web 		= require('./app/isomorphic/server/web');
+var web 		= require('./app/api/web');
 var rest 		= require('./app/api/rest');
 var path   	 	= require('path');
 var compression = require('compression');
@@ -14,7 +11,6 @@ var browserify  = require('browserify-middleware');
 
 // Init Server
 var app = express();
-global.isFirstLoad = false;
 
 // Set parameters
 app.use(bodyParser.urlencoded({

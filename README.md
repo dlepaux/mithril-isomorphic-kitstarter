@@ -1,9 +1,9 @@
 # [Mithril][] Isomorphic KitStarter
 
-Build thanks to [Brunch][]
+Build thanks to 
 
 - [Installation](#installation)
-- [Features](#features)
+- [Components](#components)
 - [TODO](#todo)
 - [Thanks](#thanks)
 - [Licence](#licence)
@@ -11,29 +11,38 @@ Build thanks to [Brunch][]
 
 ## <a name="installation"></a> Installation
 
-1. `git clone https://github.com/dlepaux/mithril-isomorphic-starterkit mithril-isomorphic-starterkit`
+1. `git clone https://github.com/dlepaux/mithril-isomorphic-starterkit`
 2. `cd mithril-isomorphic-starterkit`
 3. `npm install`
-4. `node server`
+4. `bower install`
+5. `brunch build`
+6. `node server`
+
+All in one : `git clone https://github.com/dlepaux/mithril-isomorphic-starterkit && cd mithril-isomorphic-starterkit && npm install && bower install && brunch build && node server`
 
 If you want to run it in production mode (JS minification) just run `NODE_ENV=production node server`
 
-## <a name="features"></a> Features
+## <a name="components"></a> Components
 
-- [Foundation][]  v6.1.2
+Project
+- Friendly Arborescence
+- [Brunch][] builder
+
+Server (Back)
+- Express
 - [Mithril][]     v0.2.2-rc.1
+- MySQL           driver
+- Sequilize       ORM
 
+Client (Front)
+- [Mithril][]     v0.2.2-rc.1
+- [Foundation][]  v6.1.2
 
 ## <a name="todo"></a> TODO
 
-- Testing route with parameters
-- Testing dynamic routes
-- Testing I18n API
-- Unit Testing (Mocha)
-- depends on what you want to achieve
-- creating a small version of your app that just contains the code which is needed to render this very page e. G. is a pretty good optimization
-- and load the rest async when the app is running
-- Maybe remove the need for ajax for the first page-load altogether might be another
+- Testing dynamic routes for show resources
+- Testing dynamic routes for show pages
+- Add jQuery
 
 ## <a name="thanks"></a> Thanks
 

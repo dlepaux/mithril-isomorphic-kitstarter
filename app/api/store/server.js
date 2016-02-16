@@ -1,6 +1,6 @@
 'use strict';
 
-var resources = require('../server/resources');
+var resources = require('./../resources');
 
 function load(type, id) {
   if (!resources[type]) {

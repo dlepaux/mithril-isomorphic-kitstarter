@@ -6,7 +6,7 @@
   "license": "MIT",
   "main": "js/index.js",
   "browser": {
-    "./app/isomorphic/store/index.js": "./app/isomorphic/store/client.js"
+    "./app/api/store/index.js": "./app/api/store/client.js"
   },
   "scripts": {
     "start": "brunch watch"
@@ -22,7 +22,6 @@
     "lodash": "^2.4.1",
     "mithril": "^0.2.0",
     "mithril-node-render": "^0.4.2",
-    "mithril-trust-link": "^0.1.0",
     "mysql": "^2.10.2",
     "promise": "^6.1.0",
     "sequelize": "^3.0.1",
