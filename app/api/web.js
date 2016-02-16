@@ -18,6 +18,7 @@ function base(content) {
       '<head>',
         '<title>isomorphic mithril application</title>',
         '<meta charset="utf-8">',
+        '<link rel="stylesheet" href="/css/master.css"/>',
         '<script src="/index.js"></script>',
       '</head>',
       '<body>',

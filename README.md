@@ -40,10 +40,11 @@ Client (Front)
 
 ## <a name="todo"></a> TODO
 
-- Testing dynamic routes for show resources
-- Testing dynamic routes for show pages
-- SPA optimize for only one request per load
+- Testing dynamic routes for show resources OK
+- Testing dynamic routes for show pages OK
+- SPA optimize for only one request per load 
 - Add jQuery
+- Use Jade for templation + lazy loading templates
 - Fb-Flo server preconfigured
 
 ## <a name="thanks"></a> Thanks
