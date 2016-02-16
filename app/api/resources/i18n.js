@@ -1,10 +1,13 @@
 'use strict';
 
+var Promise   = require('promise');
+var db 				= require('./../../models');
+
 module.exports = {
 	i18n: {
     get: function (id) {
       return new Promise(function(resolve) {
-        sequelize
+        db.sequelize
           .query('SELECT * FROM i18n WHERE i18n.id = ' + id)
           .spread(function(results, metadata) {
             // Each record will now be mapped to the project's DAO-Factory.

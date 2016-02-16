@@ -13,10 +13,10 @@ function controller(params, done) {
       scope.myCat = cat;
       done && done(null, scope);
     });
-    /*store.load('i18n', 10).then( function (i18n) {
+    store.load('i18n', 10).then( function (i18n) {
       scope.i18n = i18n;
       done && done(null, scope);
-    });*/
+    });
   }
 
   loadData();
@@ -34,7 +34,8 @@ function view(scope) {
       href: '/',
       config: m.route
     }, 'back to home page'),
-    m('p', scope.myCat && ('My cats name is : ' + scope.myCat.name) || '')
+    m('p', scope.myCat && ('My cats name is : ' + scope.myCat.name) || ''),
+    m('p', scope.i18n && ('My i18n key is : ' + scope.i18n.key) || '')
   ];
 }
 

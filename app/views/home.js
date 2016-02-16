@@ -1,13 +1,16 @@
 'use strict';
 
+// Requires
 var m = require('mithril');
 
+// Controller
 function controller(params) {
   if ( ! params) {
     global.isFirstLoad = false;
   }
 }
 
+// View
 function view() {
   return [
     m('h1', 'mithril-isomorphic-example'),

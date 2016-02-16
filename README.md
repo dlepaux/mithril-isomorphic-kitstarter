@@ -42,7 +42,9 @@ Client (Front)
 
 - Testing dynamic routes for show resources
 - Testing dynamic routes for show pages
+- SPA optimize for only one request per load
 - Add jQuery
+- Fb-Flo server preconfigured
 
 ## <a name="thanks"></a> Thanks
 
