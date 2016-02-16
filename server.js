@@ -1,10 +1,13 @@
 'use strict';
 
+// Init Global
+require('./app/start/global');
+
 // Requires
 var express 	= require('express');
 var bodyParser 	= require('body-parser');
 var web 		= require('./app/isomorphic/server/web');
-var rest 		= require('./app/isomorphic/server/rest');
+var rest 		= require('./app/api/rest');
 var path   	 	= require('path');
 var compression = require('compression');
 var browserify  = require('browserify-middleware');
@@ -26,7 +29,7 @@ app.use(web);
 // API
 app.use('/api/v1', rest);
 // Build index.js with browserify
-app.get('/index.js', browserify('./app/isomorphic/client/index.js'));
+app.get('/index.js', browserify('./app/index.js'));
 // Join public rep to use css, img, etc
 app.use(express.static(path.join(__dirname, 'public')));
 // Set PORT

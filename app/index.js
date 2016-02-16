@@ -4,13 +4,14 @@
 if (global.document) {
   require('es6-promise').polyfill();
 }
-global.isFirstLoad = true;
-
 var domready = require('domready');
 var m 		 = require('mithril');
 
+// Init global
+require('./start/global');
+
 // Get routes
-var routes = require('./../../routes');
+var routes = require('./routes');
 // Define route style, (pathname|hash|search)
 m.route.mode = 'pathname';
 // Define routes when DOM Ready

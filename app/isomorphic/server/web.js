@@ -6,7 +6,7 @@ var each    = require('lodash').each;
 var render  = require('mithril-node-render');
 
 // Get routes
-var routes  = require('./../../routes');
+var routes  = require(global.app_path() + 'routes');
 
 // Init Express server
 var app = express();

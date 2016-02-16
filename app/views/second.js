@@ -2,7 +2,6 @@
 
 // Requires
 var m           = require('mithril');
-var mTrustLink  = require('mithril-trust-link');
 var store       = require('../isomorphic/store');
 
 // Controller
@@ -20,38 +19,23 @@ function controller(params, done) {
     });*/
   }
 
-  // Côté client, on ne va pas exécuter ce controlleur avec des paramètres, donc si il n'existe pas on est côté client
-  if ( ! (! params && ! done && global.isFirstLoad)) {
-    loadData();
-  }
+  loadData();
 
   return scope;
 }
 
 // View
 function view(scope) {
-  if (global.isFirstLoad) {
-    global.isFirstLoad = false;
-    try {
-      console.log('mTrustLink.convert');
-      return mTrustLink.convert(global.htmlLoaded);
-    } catch(e) {
-      console.log(e);
-      return m.trust(global.htmlLoaded);
-    }
-  } else {
-    return [
-      m.trust('<!-- Server side rendering \\o/ -->'),
-      m('h1', 'Ohh, another page'),
-      m('p', 'try to realod and look to the response'),
-      m('a', {
-        href: '/',
-        config: m.route
-      }, 'back to home page'),
-      m('p', scope.myDog && ('My dogs name is : ' + scope.myDog.name) || ''),
-      m('p', scope.i18n && ('My i18n key is : ' + scope.i18n.key) || '')
-    ];
-  }
+  return [
+    m.trust('<!-- Server side rendering \\o/ -->'),
+    m('h1', 'Ohh, another page'),
+    m('p', 'try to realod and look to the response'),
+    m('a', {
+      href: '/',
+      config: m.route
+    }, 'back to home page'),
+    m('p', scope.myDog && ('My dogs name is : ' + scope.myDog.name) || '')
+  ];
 }
 
 module.exports = {
