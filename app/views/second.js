@@ -9,8 +9,8 @@ function controller(params, done) {
   var scope = {};
 
   var loadData = function () {
-    store.load('dog', 123).then( function (dog) {
-      scope.myDog = dog;
+    store.load('cat', 123).then( function (cat) {
+      scope.myCat = cat;
       done && done(null, scope);
     });
     /*store.load('i18n', 10).then( function (i18n) {
@@ -34,7 +34,7 @@ function view(scope) {
       href: '/',
       config: m.route
     }, 'back to home page'),
-    m('p', scope.myDog && ('My dogs name is : ' + scope.myDog.name) || '')
+    m('p', scope.myCat && ('My cats name is : ' + scope.myCat.name) || '')
   ];
 }
 
