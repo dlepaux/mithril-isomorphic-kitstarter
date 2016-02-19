@@ -5,7 +5,6 @@ var proxy   = require('express-http-proxy');
 var express = require('express');
 var each    = require('lodash').each;
 var render  = require('mithril-node-render');
-var request = require('supertest');
 
 // Get routes
 var routes  = require('./../routes');
