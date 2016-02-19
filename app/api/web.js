@@ -66,7 +66,7 @@ each(routes, function(module, route) {
   });
 });
 
-app.use('/proxy', proxy('http://dynamixcms.org', {
+app.use('/proxy', proxy('https://lafabrique-france.aviva.com/voting/projet/vue/918', {
   forwardPath: function(req, res) {
     return require('url').parse(req.url).path;
   }

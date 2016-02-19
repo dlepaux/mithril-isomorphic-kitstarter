@@ -14,7 +14,7 @@ function controller(params, done) {
   }
 
   if ( ! params && ! done) {
-    $.get("/proxy?url=www.google.com", function(response) { 
+    $.get("/proxy", function(response) { 
       scope.data = response;
       done && done(null, scope);
     });
