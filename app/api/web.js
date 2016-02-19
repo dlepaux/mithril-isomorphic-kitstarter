@@ -5,6 +5,7 @@ var proxy   = require('express-http-proxy');
 var express = require('express');
 var each    = require('lodash').each;
 var render  = require('mithril-node-render');
+var request = require('supertest');
 
 // Get routes
 var routes  = require('./../routes');
@@ -69,13 +70,10 @@ each(routes, function(module, route) {
 app.get('/proxy', function(req, res, next) {
   proxy('www.google.com', {
     forwardPath: function(req, res) {
+      console.log(res);
+      console.log(req);
       return require('url').parse(req.url).path;
-    },
-    intercept: function(rsp, data, req, res, callback) {
-     // rsp - original response from the target
-     data = JSON.parse(data.toString('utf8'));
-     callback(null, JSON.stringify(data));
-    },
+    }
   })
 });
 
