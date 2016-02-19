@@ -16,11 +16,7 @@ var features = [
 ];
 
 // Controller
-function controller(params) {
-  if ( ! params) {
-    global.isFirstLoad = false;
-  }
-}
+function controller() {}
 
 // View
 function view() {

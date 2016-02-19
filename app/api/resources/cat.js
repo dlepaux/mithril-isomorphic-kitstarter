@@ -1,5 +1,8 @@
 'use strict';
 
+// Requires
+var Promise = require('promise');
+
 module.exports = {
 	cat: {
     get: function(id) {

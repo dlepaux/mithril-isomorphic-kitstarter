@@ -8,8 +8,21 @@ var store       = require('./../api/store');
 function controller(params, done) {
   var scope = {};
 
-  store.load('spa', 'second-page').then( function (scope) {
-    scope = scope;
+  store.load('spa', 'second-page').then( function (d) {
+    scope = d;
+    console.log(scope);
+    done && done(null, scope);
+  });
+
+  store.load('cat', 10).then( function (d) {
+    scope.myCat = d;
+    //console.log(scope);
+    //done && done(null, scope);
+  });
+
+  store.load('i18n', 10).then( function (d) {
+    scope.i18n = d;
+    console.log(scope);
     done && done(null, scope);
   });
 

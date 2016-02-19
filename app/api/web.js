@@ -1,6 +1,7 @@
 'use strict';
 
 // Requires
+var proxy   = require('express-http-proxy');
 var express = require('express');
 var each    = require('lodash').each;
 var render  = require('mithril-node-render');
@@ -19,7 +20,16 @@ function base(content) {
         '<title>isomorphic mithril application</title>',
         '<meta charset="utf-8">',
         '<link rel="stylesheet" href="/css/master.css"/>',
-        '<script src="/index.js"></script>',
+        '<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>',
+        '<script>',
+          '(function($) {',
+            'var head = document.getElementsByTagName("head").item(0);',
+            'var script = document.createElement("script");',
+            'script.setAttribute("type", "text/javascript");',
+            'script.setAttribute("src", "/index.js");',
+            'head.appendChild(script);',
+          '})(jQuery);',
+        '</script>',
       '</head>',
       '<body>',
         content,
@@ -55,6 +65,12 @@ each(routes, function(module, route) {
     });
   });
 });
+
+app.use('/proxy', proxy('http://dynamixcms.org', {
+  forwardPath: function(req, res) {
+    return require('url').parse(req.url).path;
+  }
+}));
 
 
 module.exports = app;

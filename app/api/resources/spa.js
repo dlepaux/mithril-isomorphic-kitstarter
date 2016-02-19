@@ -2,24 +2,24 @@
 
 // Requires
 var Promise = require('promise');
-var store = require('./../store/client.js');
+var i18n    = require('./../resources/i18n.js');
+var cat     = require('./../resources/cat.js');
 
 // Export data loaded
 module.exports = {
   spa: {
     get: function (id) {
-      console.log(store);
       return new Promise(function(resolve) {
         var scope = {};
 
-        store.load('cat', 123).then( function (cat) {
+        cat.cat.get(10).then( function (cat) {
           scope.myCat = cat;
         });
-        
-        /*store.load('i18n', 10).then( function (i18n) {
+          
+        i18n.i18n.get(10).then( function (i18n) {
           scope.i18n = i18n;
-        });*/
-        resolve(scope);
+          resolve(scope);
+        });
       });
     }
 	}

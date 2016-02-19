@@ -12,7 +12,15 @@ function controller(params, done) {
   } else {
     scope.id = m.route.param("landingSlug");
   }
-  done && done(null, scope);
+
+  if ( ! params && ! done) {
+    $.get("/proxy?url=www.google.com", function(response) { 
+      scope.data = response;
+      done && done(null, scope);
+    });
+  } else {
+    done && done(null, scope);
+  }
 
 
   return scope;
@@ -22,7 +30,8 @@ function controller(params, done) {
 function view(scope) {
   return [
     m.trust('<!-- Server side rendering \\o/ -->'),
-    m('h1', scope.id)
+    m('h1', scope.id),
+    m.trust(scope.data)
   ];
 }
 
