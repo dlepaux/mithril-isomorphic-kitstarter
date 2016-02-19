@@ -66,15 +66,17 @@ each(routes, function(module, route) {
   });
 });
 
-app.use('/proxy', proxy('https://lafabrique-france.aviva.com/voting/projet/vue/918', {
-  forwardPath: function(req, res) {
-    return require('url').parse(req.url).path;
-  },
-  intercept: function(rsp, data, req, res, callback) {
-   // rsp - original response from the target
-   data = JSON.parse(data.toString('utf8'));
-   callback(null, JSON.stringify(data));
-  },
+app.get('/proxy', function(req, res, next) {
+  proxy('www.google.com', {
+    forwardPath: function(req, res) {
+      return require('url').parse(req.url).path;
+    },
+    intercept: function(rsp, data, req, res, callback) {
+     // rsp - original response from the target
+     data = JSON.parse(data.toString('utf8'));
+     callback(null, JSON.stringify(data));
+    },
+  })
 }));
 
 
