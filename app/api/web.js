@@ -77,7 +77,7 @@ app.get('/proxy', function(req, res, next) {
      callback(null, JSON.stringify(data));
     },
   })
-}));
+});
 
 
 module.exports = app;
