@@ -8,6 +8,8 @@ var rest 		= require('./app/api/rest');
 var path   	 	= require('path');
 var compression = require('compression');
 var browserify  = require('browserify-middleware');
+var proxy   = require('express-http-proxy');
+
 
 // Init Server
 var app = express();
@@ -33,6 +35,18 @@ var port = process.env.PORT || 80;
 console.log('Server is now running on port ' + port);
 // Listen PORT
 app.listen(port);
+
+//
+app.get('/proxy', function(req, res, next) {
+  proxy('www.google.com', {
+    forwardPath: function(req, res) {
+      console.log(res);
+      console.log(req);
+      return require('url').parse(req.url).path;
+    }
+  })
+});
+
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {

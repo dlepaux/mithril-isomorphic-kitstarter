@@ -1,7 +1,6 @@
 'use strict';
 
 // Requires
-var proxy   = require('express-http-proxy');
 var express = require('express');
 var each    = require('lodash').each;
 var render  = require('mithril-node-render');
@@ -65,16 +64,5 @@ each(routes, function(module, route) {
     });
   });
 });
-
-app.get('/proxy', function(req, res, next) {
-  proxy('www.google.com', {
-    forwardPath: function(req, res) {
-      console.log(res);
-      console.log(req);
-      return require('url').parse(req.url).path;
-    }
-  })
-});
-
 
 module.exports = app;
