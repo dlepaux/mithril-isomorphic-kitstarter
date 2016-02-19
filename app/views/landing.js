@@ -2,20 +2,6 @@
 
 // Requires
 var m           = require('mithril');
-var proxy   = require('express-http-proxy');
-var express = require('express');
-
-
-app.use('/proxy', proxy('www.google.com', {
-  forwardPath: function(req, res) {
-    return require('url').parse(req.url).path;
-  },
-  intercept: function(rsp, data, req, res, callback) {
-   // rsp - original response from the target
-   data = JSON.parse(data.toString('utf8'));
-   callback(null, JSON.stringify(data));
-  },
-}));
 
 // Controller
 function controller(params, done) {
