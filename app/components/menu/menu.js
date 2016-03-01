@@ -1,7 +1,7 @@
 'use strict';
 
 // Requires
-var m           = require('mithril');
+var m = require('mithril');
 
 // Controller
 function controller(params, done) {
@@ -14,14 +14,10 @@ function controller(params, done) {
   }
 
   if ( ! params && ! done) {
-    $.get("/proxy", function(response) { 
-      scope.data = response;
-      done && done(null, scope);
-    });
+    done && done(null, scope);
   } else {
     done && done(null, scope);
   }
-
 
   return scope;
 }
@@ -29,7 +25,6 @@ function controller(params, done) {
 // View
 function view(scope) {
   return [
-    m.trust('<!-- Server side rendering \\o/ -->'),
     m('h1', scope.id),
     m.trust(scope.data)
   ];

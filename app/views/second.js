@@ -20,12 +20,12 @@ function controller(params, done) {
     //done && done(null, scope);
   });
 
-  /*store.load('i18n', 10).then( function (d) {
+  store.load('i18n', 10).then( function (d) {
     scope.i18n = d;
     console.log(scope);
     done && done(null, scope);
   });
-*/
+
   return scope;
 }
 
@@ -43,8 +43,8 @@ function view(scope) {
     m('a', {
       href: '/landing/blabla',
       config: m.route
-    }, 'go landing')
-    //m('p', scope.i18n && ('My i18n key is : ' + scope.i18n.key) || '')
+    }, 'go landing'),
+    m('p', scope.i18n && ('My i18n key is : ' + scope.i18n.key) || '')
   ];
 }
 

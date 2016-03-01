@@ -2,7 +2,7 @@
 
 var home 	= require('./views/home');
 var second 	= require('./views/second.js');
-var landing = require('./views/landing.js');
+var landing = require('./components/landing/landing.js');
 
 module.exports = {
   '/': home,
