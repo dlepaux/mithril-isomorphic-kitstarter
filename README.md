@@ -1,4 +1,4 @@
-# [Mithril][] Isomorphic KitStarter
+# Mithril Isomorphic KitStarter
 
 Build thanks to 
 
