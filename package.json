@@ -6,10 +6,12 @@
   "license": "MIT",
   "main": "js/index.js",
   "browser": {
-    "./app/api/store/index.js": "./app/api/store/client.js"
+    "./dist/api/store/index.js": "./dist/api/store/client.js"
   },
   "scripts": {
-    "start": "brunch watch"
+    "start": "node server",
+    "install": "cp app/config/* dist/config && coffee --compile --output dist/ app/ && brunch build",
+    "watch": "coffee --compile --output dist/ app/ && node server"
   },
   "dependencies": {
     "body-parser": "^1.10.1",

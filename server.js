@@ -3,8 +3,8 @@
 // Requires
 var express 	= require('express');
 var bodyParser 	= require('body-parser');
-var web 		= require('./app/api/web');
-var rest 		= require('./app/api/rest');
+var web 		= require('./dist/api/web');
+var rest 		= require('./dist/api/rest');
 var path   	 	= require('path');
 var compression = require('compression');
 var browserify  = require('browserify-middleware');
@@ -25,7 +25,7 @@ app.use(web);
 // API
 app.use('/api/v1', rest);
 // Build index.js with browserify
-app.get('/index.js', browserify('./app/index.js'));
+app.get('/index.js', browserify('./dist/index.js'));
 // Join public rep to use css, img, etc
 app.use(express.static(path.join(__dirname, 'public')));
 // Set PORT
