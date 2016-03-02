@@ -39,7 +39,7 @@ function base(body, title, description) {
 function extend(layout, datas) {
   // Get scope of layout
   var scope = layout.controller();
-  // Merging scope (original key are overrided by caller)
+  // Merging scope (layout key are overrided by caller)
   for (var k in datas) {
     scope[k] = datas[k];
   }
@@ -52,11 +52,13 @@ function updateTitle(text) {
   if (typeof(document) != 'undefined') {
     var head = document.getElementsByTagName('head'),
         title = head[0].getElementsByTagName('title');
+
+    console.log(text);
     title[0].innerHTML = text;
   }
 }
 // Update meta description
-function updateTitle(text) {
+function updateDescription(text) {
   if (typeof(document) != 'undefined') {
     var head = document.getElementsByTagName('head'),
         metas = head[0].getElementsByTagName('meta');
@@ -73,4 +75,5 @@ module.exports = {
   base: base,
   extend: extend,
   updateTitle: updateTitle,
+  updateDescription: updateDescription,
 };

@@ -23,9 +23,6 @@ function controller(params, done) {
 
 // View
 function view(scope) {
-  if ( ! scope) {
-    layout.updateTitle(title);
-  }
   return [
     m("#wrapper", scope && scope.content),
   ];
@@ -33,7 +30,5 @@ function view(scope) {
 
 module.exports = {
   controller: controller,
-  view: view,
-  title: title,
-  description: description
+  view: view
 };

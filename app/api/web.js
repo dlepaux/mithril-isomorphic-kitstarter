@@ -21,9 +21,6 @@ each(routes, function(module, route) {
 
     // Envoi la réponse
     var send = function (scope) {
-      console.log(scope.title);
-      console.log(scope.description);
-      console.log(scope);
       res.end(layout.base(render(module.view(scope)), scope.title, scope.description));
       scope && scope.onunload && scope.onunload();
     }

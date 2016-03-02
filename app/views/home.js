@@ -36,12 +36,11 @@ function controller(params, done) {
 
 // View
 function view(scope) {
-  if ( ! scope) {
-    console.log('update');
+  if (scope) {
     layout.updateTitle(title);
-  } else {
-
+    layout.updateDescription(description);
   }
+
   return layout.extend(require('./layout.js'), {
     content: [
       m('h1.text-center', 'Mithril Isomorphic - KitStarter'),

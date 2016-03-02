@@ -39,10 +39,11 @@ function controller(params, done) {
 
 // View
 function view(scope) {
-  if ( ! scope) {
+  if (scope) {
     layout.updateTitle(title);
+    layout.updateDescription(description);
   }
-  
+
   return layout.extend(require('./layout.js'), {
     content: [
       m.trust('<!-- Server side rendering \\o/ -->'),
