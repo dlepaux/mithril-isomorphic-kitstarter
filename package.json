@@ -10,8 +10,9 @@
   },
   "scripts": {
     "start": "node server",
-    "install": "cp app/config/* dist/config && coffee --compile --output dist/ app/ && brunch build",
-    "watch": "coffee --compile --output dist/ app/ && node server"
+    "production": "NODE_ENV=production node server",
+    "watch": "coffee --watch --compile --output dist/ app/",
+    "install": "cp app/config/* dist/config && coffee --compile --output dist/ app/ && bower install && brunch build"
   },
   "dependencies": {
     "body-parser": "^1.10.1",

@@ -3,6 +3,8 @@
 Build thanks to 
 
 - [Installation](#installation)
+- [Workflow](#workflow)
+- [Usage](#usage)
 - [Components](#components)
 - [TODO](#todo)
 - [Thanks](#thanks)
@@ -11,21 +13,31 @@ Build thanks to
 
 ## <a name="installation"></a> Installation
 
+Just run :
+
 1. `git clone https://github.com/dlepaux/mithril-isomorphic-starterkit`
 2. `cd mithril-isomorphic-starterkit`
-3. `npm install`
-4. `bower install`
-5. `brunch build`
-6. `node server`
+3. `npm run install`
 
-All in one : `git clone https://github.com/dlepaux/mithril-isomorphic-starterkit && cd mithril-isomorphic-starterkit && npm install && bower install && brunch build && node server`
+All in one : `git clone https://github.com/dlepaux/mithril-isomorphic-starterkit && cd mithril-isomorphic-starterkit && npm run install`
 
-If you want to run it in production mode (JS minification) just run `NODE_ENV=production node server`
+## <a name="workflow"></a> Workflow
+
+You will need to compile `.coffee` files onto `.js` when you update one. To watch `.coffee` run `npm run watch`
+
+## <a name="usage"></a> Usage
+
+To launch the app do : `npm run start`
+
+If you want to run it in production mode (JS minification) just run `npm run production`
 
 ## <a name="components"></a> Components
 
 Project
 - Friendly Arborescence
+- CoffeeScript
+- SCSS
+- Soon FbFlo server
 - [Brunch][] builder
 
 Server (Back)
@@ -40,17 +52,15 @@ Client (Front)
 
 ## <a name="todo"></a> TODO
 
-- Full CoffeeScript
 - SPA optimize for only one request per load 
-- Add jQuery OK
 - Use Jade for templation + lazy loading templates CANCELED
-- DOC usefull example : http://ratfactor.com/daves-guide-to-mithril-js
-- Fb-Flo server preconfigured
+- Fb-Flo server configuration, advanced features
 
 ## <a name="thanks"></a> Thanks
 
 Thanks to [Stephan Hoyer][] for his [Mihtril Isomorphic Example][]
 
+Good tutorial to learning mithril : http://ratfactor.com/daves-guide-to-mithril-js
 
 ## <a name="licence"></a> Licence
 
