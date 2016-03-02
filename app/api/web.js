@@ -4,39 +4,13 @@
 var express = require('express');
 var each    = require('lodash').each;
 var render  = require('mithril-node-render');
-var blade   = require('./../lib/blade.js');
+var layout  = require('./../lib/layout.js');
 
 // Get routes
 var routes  = require('./../routes');
 
 // Init Express server
 var app = express();
-
-function base(content) {
-  return [
-    '<!doctype html>',
-    '<html>',
-      '<head>',
-        '<title>isomorphic mithril application</title>',
-        '<meta charset="utf-8">',
-        '<link rel="stylesheet" href="/css/master.css"/>',
-        '<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>',
-        '<script>',
-          '(function($) {',
-            'var head = document.getElementsByTagName("head").item(0);',
-            'var script = document.createElement("script");',
-            'script.setAttribute("type", "text/javascript");',
-            'script.setAttribute("src", "/index.js");',
-            'head.appendChild(script);',
-          '})(jQuery);',
-        '</script>',
-      '</head>',
-      '<body>',
-        content,
-      '</body>',
-    '</html>'
-  ].join('');
-}
 
 // Declare all GET routes
 each(routes, function(module, route) {
@@ -47,7 +21,10 @@ each(routes, function(module, route) {
 
     // Envoi la réponse
     var send = function (scope) {
-      res.end(base(render(module.view(scope))));
+      console.log(scope.title);
+      console.log(scope.description);
+      console.log(scope);
+      res.end(layout.base(render(module.view(scope)), scope.title, scope.description));
       scope && scope.onunload && scope.onunload();
     }
 

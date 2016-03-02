@@ -40,11 +40,11 @@ Client (Front)
 
 ## <a name="todo"></a> TODO
 
-- Testing dynamic routes for show resources OK
-- Testing dynamic routes for show pages OK
+- Full CoffeeScript
 - SPA optimize for only one request per load 
-- Add jQuery
-- Use Jade for templation + lazy loading templates
+- Add jQuery OK
+- Use Jade for templation + lazy loading templates CANCELED
+- DOC usefull example : http://ratfactor.com/daves-guide-to-mithril-js
 - Fb-Flo server preconfigured
 
 ## <a name="thanks"></a> Thanks
