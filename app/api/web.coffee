@@ -15,6 +15,11 @@ app = express()
 # Declare all GET routes
 each routes, (module, route) ->
   app.get route, (req, res, next) ->
+    # Envoi la réponse
+    send = (scope) ->
+      res.end layout.base(render(module.view(scope)), scope.title, scope.description)
+      scope and scope.onunload and scope.onunload()
+    
     # Server Side
     # Set HTTP header
     res.type 'html'
@@ -27,10 +32,6 @@ each routes, (module, route) ->
         return next(err)
       send scope
     )
-    # Envoi la réponse
 
-    send = (scope) ->
-      res.end layout.base(render(module.view(scope)), scope.title, scope.description)
-      scope and scope.onunload and scope.onunload()
 
 module.exports = app
