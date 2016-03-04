@@ -1,8 +1,8 @@
 'use strict'
 
 # Requires
-m = require('mithril')
-path = require('path')
+m      = require('mithril')
+path   = require('path')
 layout = require('./../lib/layout.js')
 
 # Metas

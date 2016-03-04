@@ -1,8 +1,8 @@
 "use strict"
 
 # Requires
-m = require('mithril')
-store = require('./../api/store')
+m      = require('mithril')
+store  = require('./../api/store')
 layout = require('./../lib/layout.js')
 
 # Metas
@@ -15,24 +15,11 @@ controller = (params, done) ->
     title: title
     description: description
 
-  ###store.load('spa', 'second-page').then( function (d) {
-    scope = d;
-    console.log(scope);
-    done && done(null, scope);
-  });
-  ###
-
-  store.load('cat', 10).then (d) ->
-    scope.myCat = d
-    #console.log(scope);
-    #done && done(null, scope);
-    return
-  store.load('i18n', 10).then (d) ->
-    scope.i18n = d
-    console.log scope
+  store.load('spa', 'second').then (data) ->
+    scope[k] = data[k] for k of data
     done and done(null, scope)
-    return
-  scope
+
+  return scope
 
 # View
 view = (scope) ->

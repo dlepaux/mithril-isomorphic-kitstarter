@@ -2,8 +2,8 @@
 
 # Requires
 path = require('path')
-fs = require('fs')
-m = require('mithril')
+fs   = require('fs')
+m    = require('mithril')
 
 
 # Base of app
@@ -24,7 +24,7 @@ base = (body, title, description) ->
     'var head = document.getElementsByTagName("head").item(0);'
     'var script = document.createElement("script");'
     'script.setAttribute("type", "text/javascript");'
-    'script.setAttribute("src", "/index.js");'
+    'script.setAttribute("src", "/js/index.js");'
     'head.appendChild(script);'
     '})(jQuery);'
     '</script>'
@@ -34,7 +34,6 @@ base = (body, title, description) ->
     '</body>'
     '</html>'
   ].join ''
-
 
 # Extend
 extend = (layout, datas) ->
@@ -46,15 +45,12 @@ extend = (layout, datas) ->
   # Return view of layout with combined scope
   layout.view scope
 
-
 # Update meta title
 updateTitle = (text) ->
   if typeof document != 'undefined'
     head = document.getElementsByTagName('head')
     title = head[0].getElementsByTagName('title')
-    console.log text
     title[0].innerHTML = text
-
 
 # Update meta description
 updateDescription = (text) ->

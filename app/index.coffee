@@ -14,4 +14,3 @@ m.route.mode = 'pathname'
 domready ->
   global.htmlLoaded = document.body.innerHTML
   m.route document.body, '/', routes
-  return

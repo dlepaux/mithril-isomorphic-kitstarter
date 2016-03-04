@@ -1,9 +1,9 @@
-'use strict';
+'use strict'
 
 # Requires
 Promise = require('promise')
-i18n = require('./../resources/i18n.js')
-cat = require('./../resources/cat.js')
+i18n = require('./i18n.js')
+cat = require('./cat.js')
 
 # Export data loaded
 module.exports = spa: get: (id) ->

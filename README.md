@@ -58,7 +58,8 @@ Client (Front)
 
 ## <a name="todo"></a> TODO
 
-- SPA optimize for only one request per load 
+- OK SPA optimize for only one request per load
+
 - Use Jade for templation + lazy loading templates CANCELED
 - Fb-Flo server configuration, advanced features
 

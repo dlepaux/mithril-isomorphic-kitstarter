@@ -8,5 +8,4 @@ module.exports = cat: get: (id) ->
     resolve
       id: id
       name: 'Kitty'
-    return
 )

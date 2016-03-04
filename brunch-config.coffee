@@ -33,6 +33,11 @@ exports.config =
       index: true
       # Autoprefix CSS3 properties
       autoprefixer: {add:true}
+    fingerprint:
+      # Mapping file so your server can serve the right files
+      manifest: './dist/config/assets.json'
+      srcBasePath: 'public'
+      destBasePath: 'public'
     assetsmanager:
       copyTo:
         '../dist/config/': ['app/config/*']
@@ -43,7 +48,7 @@ exports.config =
       coffee
       """
       bundles:
-        'index.js':
+        'js/index.js':
           # Passed to browserify. 
           entry: 'dist/index.js'
           # Anymatch, as used in Brunch. 
@@ -58,6 +63,6 @@ exports.config =
           instanceOptions: {}
     afterBrunch: [
       'coffee --compile --output dist/ app/'
-      'forever stopall'
-      'forever start server.js'
+      #'forever stopall'
+      #'forever start server.js'
     ]
