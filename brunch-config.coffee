@@ -33,3 +33,31 @@ exports.config =
       index: true
       # Autoprefix CSS3 properties
       autoprefixer: {add:true}
+    assetsmanager:
+      copyTo:
+        '../dist/config/': ['app/config/*']
+    browserify:
+      # A string of extensions that will be used in Brunch and for browserify. 
+      # Default: js json coffee ts jsx hbs jade. 
+      extensions: """
+      coffee
+      """
+      bundles:
+        'index.js':
+          # Passed to browserify. 
+          entry: 'dist/index.js'
+          # Anymatch, as used in Brunch. 
+          matcher: /^app/
+          # Direct access to the browserify bundler to do anything you need. 
+          onBrowserifyLoad: (bundler) -> console.log 'onWatchifyLoad'
+          # Any files watched by browserify won't be in brunch's regular pipeline. If you do anything before your javascripts are compiled, now's the time. 
+          onBeforeBundle: (bundler) -> console.log 'onBeforeBundle'
+          # Any files watched by browserify won't be in brunch's regular pipeline. If you do anything after your javascripts are compiled, now's the time. 
+          onAfterBundle: (error, bundleContents) -> console.log 'onAfterBundle'
+          # Any options to pass to `browserify`. `debug` will be set to `!production` if not already defined. `extensions` will be set to a proper list of `plugins.browserify.extensions` 
+          instanceOptions: {}
+    afterBrunch: [
+      'coffee --compile --output dist/ app/'
+      'forever stopall'
+      'forever start server.js'
+    ]

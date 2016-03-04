@@ -13,6 +13,12 @@ Build thanks to
 
 ## <a name="installation"></a> Installation
 
+Cli:
+forever
+coffee
+npm
+node
+
 Just run :
 
 1. `git clone https://github.com/dlepaux/mithril-isomorphic-starterkit`
@@ -23,7 +29,7 @@ All in one : `git clone https://github.com/dlepaux/mithril-isomorphic-starterkit
 
 ## <a name="workflow"></a> Workflow
 
-You will need to compile `.coffee` files onto `.js` when you update one. To watch `.coffee` run `npm run watch`
+You will need to compile `.coffee` into `.js` files when you update one. To watch `.coffee` and auto-compile run `brunch w`
 
 ## <a name="usage"></a> Usage
 
