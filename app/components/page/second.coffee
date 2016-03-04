@@ -2,8 +2,8 @@
 
 # Requires
 m      = require('mithril')
-store  = require('./../api/store')
-layout = require('./../lib/layout.js')
+store  = require('./../../api/store')
+layout = require('./../../lib/layout.js')
 
 # Metas
 title = 'Hello second page'

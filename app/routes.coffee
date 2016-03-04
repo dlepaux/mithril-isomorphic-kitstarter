@@ -1,7 +1,7 @@
 'use strict';
 
-home = require('./views/home')
-second = require('./views/second.js')
+home = require('./components/page/home')
+second = require('./components/page/second.js')
 landing = require('./components/landing/landing.js')
 
 module.exports =

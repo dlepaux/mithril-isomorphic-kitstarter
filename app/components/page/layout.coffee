@@ -2,7 +2,7 @@
 
 # Requires
 m      = require('mithril')
-layout = require('./../lib/layout.js')
+layout = require('./../../lib/layout.js')
 
 # Metas
 title = 'Hello layout'

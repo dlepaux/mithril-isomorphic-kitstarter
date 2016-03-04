@@ -3,7 +3,7 @@
 # Requires
 m      = require('mithril')
 path   = require('path')
-layout = require('./../lib/layout.js')
+layout = require('./../../lib/layout.js')
 
 # Metas
 title = 'Hello first page'
