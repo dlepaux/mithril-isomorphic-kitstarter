@@ -1,6 +1,6 @@
 # Mithril Isomorphic KitStarter
 
-Build thanks to 
+Build thanks to [Brunch][]
 
 - [Installation](#installation)
 - [Workflow](#workflow)
@@ -58,8 +58,9 @@ Client (Front)
 
 ## <a name="todo"></a> TODO
 
+- Cache (Redis?) system (https://github.com/NodeRedis/node_redis)
+- Optimisation SPA
 - OK SPA optimize for only one request per load
-
 - Use Jade for templation + lazy loading templates CANCELED
 - Fb-Flo server configuration, advanced features
 
