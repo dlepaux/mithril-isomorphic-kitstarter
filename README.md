@@ -1,5 +1,7 @@
 # Mithril Isomorphic KitStarter
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/dlepaux/mithril-isomorphic-starterkit.svg)](https://greenkeeper.io/)
+
 Build thanks to [Brunch][]
 
 - [Installation](#installation)
